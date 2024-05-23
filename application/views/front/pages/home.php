@@ -1,6 +1,6 @@
 <!--================ Home Banner Area =================-->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-   <div class="carousel-inner">
+   <div class="carousel-inner mt-md-4">
       <?php $no = 0;?>
       <?php foreach($featured as $f) : ?>
          <?php $no++;  ?>
@@ -53,7 +53,7 @@
          <?php foreach($choice as $c) : ?>
             <div class="col-lg-3">
                <div class="choice_item">
-                  <img class="img-fluid choice" src="<?= base_url("images/posting/small/$c->photo") ?>" alt="">
+                  <img class="img-fluid choice" src="<?= base_url("images/posting/$c->photo") ?>" alt="">
                   <div class="choice_text">
                      <div class="date">
                         <a class="gad_btn" href="<?= base_url("blog/category/$c->slug") ?>"><?= $c->category_name ?></a>
@@ -86,9 +86,9 @@
             </div>
             <div class="latest_news">
                <?php foreach($lastNews as $ln)  :?>
-                  <div class="media">
+                  <div class="media flex-column flex-sm-row">
                      <div class="d-flex">
-                        <img class="img-fluid" src="<?= base_url("images/posting/medium/$ln->photo") ?>" alt="">
+                        <img class="img-fluid mx0" src="<?= base_url("images/posting/$ln->photo") ?>" alt="" style="width: 100%;">
                      </div>
                      <div class="media-body">
                         <div class="choice_text">
@@ -109,56 +109,6 @@
             </div>
             <!-- End of Last News -->
 
-            <div class="tavel_food mt-5">
-               <div class="main_title2">
-                  <h2>Video Games</h2>
-               </div>
-               <div class="row">
-                  <div class="col-lg-6">
-                     <div class="row choice_small_inner">
-                        <?php $no = 0;?>
-                        <?php foreach($video_game as $vg) : ?>
-                        <?php 
-                           $no++ ;
-                           if($no < 5) : ?>
-                              <div class="col-lg-6 col-sm-6">
-                                 <div class="choice_item small">
-                                    <img class="img-fluid" src="<?= base_url("images/posting/xsmall/$vg->photo") ?>" alt="">
-                                    <div class="choice_text">
-                                       <a href="<?= base_url("blog/read/$vg->seo_title") ?>"><h4><?= $vg->title ?></h4></a>
-                                       <div class="date">
-                                          <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><?= mediumdate_indo($vg->date) ?></a>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           <?php endif ?>
-                        <?php endforeach ?>
-                     </div>
-                  </div>
-
-                  <div class="col-lg-6">
-                     <?php $no = 0; ?>
-                     <?php foreach($video_game as $vg) : ?>
-                        <?php 
-                           $no++ ;
-                           if($no == 5) : ?>
-                              <div class="choice_item">
-                                 <img class="img-fluid" src="<?= base_url("images/posting/large/$vg->photo") ?>" alt="">
-                                 <div class="choice_text">
-                                    <div class="date">
-                                       <a class="gad_btn" href="<?= base_url("blog/category/$vg->slug") ?>"><?= $vg->category_name ?></a>
-                                       <a href="#" class="float-right"><i class="fa fa-calendar" aria-hidden="true"></i><?= mediumdate_indo($vg->date) ?></a>
-                                    </div>
-                                    <a href="<?= base_url("blog/read/$vg->seo_title") ?>"><h4><?= $vg->title ?></h4></a>
-                                    <p><?= character_limiter($vg->content, 150) ?></p>
-                                 </div>
-                              </div>
-                        <?php endif ?>
-                     <?php endforeach ?>
-                  </div>               
-               </div>     
-            </div>
 
             <div class="row mt-5">
                <div class="col text-center">

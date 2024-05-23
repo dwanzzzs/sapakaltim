@@ -95,18 +95,28 @@ class Posting extends CI_Controller {
 			];
 
 			
-			if(!empty($_FILES['photo']['name'])){
-				$upload = $this->posting->uploadImage();
-				$this->_create_thumbs($upload);	
-				$data['photo'] = $upload;
+			// if(!empty($_FILES['photo']['name'])){
+			// 	$upload = $this->posting->uploadImage();
+			// 	$this->_create_thumbs($upload);	
+			// 	$data['photo'] = $upload;
+			// }
+
+			// upload foto
+			$uploadPath = "./images/posting/";
+			if(!file_exists($uploadPath)) {
+				mkdir($uploadPath, 0777, true);
 			}
+
+			$nameFile = rand(1, 100) . basename($_FILES["photo"]['name']);
+			$targetFile = $uploadPath . $nameFile;
+			move_uploaded_file($_FILES["photo"]['tmp_name'], $targetFile);
+			$data['photo'] = $nameFile;
 			
 			$this->my->save($data);
 			$this->session->set_flashdata('success', 'Posting Berhasil Ditambahkan.');
 
 			redirect(base_url('admin/posting'));
 		}
-
 	}
 
 	public function update($id)

@@ -6,7 +6,7 @@
             <h2>Berita Populer</h2>
          </div>
          <div class="choice_item">
-            <img class="img-fluid" src="<?= base_url("images/posting/large/$popular->photo") ?>" alt="">
+            <img class="img-fluid" src="<?= base_url("images/posting/$popular->photo") ?>" alt="">
             <div class="choice_text">
                <div class="date">
                   <a class="gad_btn" href="<?= base_url("blog/category/$popular->slug") ?>"><?= $popular->category_name ?></a>
@@ -24,7 +24,7 @@
             <?php foreach($trending as $t) : ?>
                <div class="item">
                   <div class="choice_item">
-                     <img src="<?= base_url('images/posting/xsmall/' . $t->photo) ?>" alt="">
+                     <img src="<?= base_url('images/posting/' . $t->photo) ?>" alt="">
                      <div class="choice_text">
                         <a href="<?= base_url("blog/read/$t->seo_title") ?>">
                            <h4><?= $t->title ?></h4>

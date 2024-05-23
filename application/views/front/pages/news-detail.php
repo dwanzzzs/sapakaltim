@@ -1,6 +1,7 @@
 <!--================Home Banner Area =================-->
 <section class="banner_area">
-   <div class="banner_inner d-flex align-items-center" style="background-image: url(<?= base_url('images/banner/' . $banner->photo) ?>)">
+   <!-- <div class="banner_inner d-flex align-items-center" style="background-image: url(<?= base_url('images/banner/' . $banner->photo) ?>)"> -->
+   <div class="banner_inner d-flex align-items-center">
       <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
       <div class="container">
          <div class="banner_content text-center">
@@ -21,7 +22,7 @@
       <div class="row">
          <div class="col-lg-8">
             <div class="main_blog_details">
-               <img class="img-fluid" src="<?= base_url("images/posting/large/$posting->photo") ?>" alt="">
+               <img class="img-fluid" src="<?= base_url("images/posting/$posting->photo") ?>" alt="">
                <h4><?= $posting->title ?></h4>
                <div class="user_details">
                   <div class="float-left">

@@ -21,7 +21,7 @@
                <?php foreach($post as $p)  :?>
                   <div class="media">
                      <div class="d-flex">
-                        <img class="img-fluid" src="<?= base_url("images/posting/medium/$p->photo") ?>" alt="">
+                        <img class="img-fluid" src="<?= base_url("images/posting/$p->photo") ?>" alt="">
                      </div>
                      <div class="media-body">
                         <div class="choice_text">
